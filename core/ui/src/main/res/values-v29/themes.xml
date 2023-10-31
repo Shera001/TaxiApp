@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V29.Theme.TaxiApp" parent="Base.V27.Theme.TaxiApp">
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+    </style>
+
+    <style name="Base.Theme.TaxiApp" parent="Base.V29.Theme.TaxiApp" />
+</resources>

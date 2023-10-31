@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="41.96716102544777"
+        mapbox:mapbox_cameraTargetLng="63.90597129250069"
+        mapbox:mapbox_cameraZoom="9.0"
+        mapbox:mapbox_locationComponentEnabled="false" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+
+        <View
+            android:id="@+id/topPanel"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_0dp"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginBottom="-16dp"
+            android:background="@drawable/bg_top_panel"
+            app:layout_constraintBottom_toBottomOf="@id/endLocationTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+        <ImageView
+            android:id="@+id/startPointIv"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:src="@drawable/ic_start_point"
+            app:layout_constraintBottom_toBottomOf="@id/startLocationTv"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+        <TextView
+            android:id="@+id/whereTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/where"
+            app:layout_constraintStart_toEndOf="@id/startPointIv"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+        <TextView
+            android:id="@+id/startLocationTv"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/map_dot"
+            android:textColor="@color/panel_text"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/whereTv"
+            app:layout_constraintTop_toBottomOf="@id/whereTv" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:background="#C6C6C6"
+            app:layout_constraintEnd_toEndOf="@id/topPanel"
+            app:layout_constraintStart_toStartOf="@id/startLocationTv"
+            app:layout_constraintTop_toBottomOf="@id/startLocationTv" />
+
+        <TextView
+            android:id="@+id/endLocationTv"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/where2"
+            android:textColor="@color/panel_text"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/startLocationTv"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <ImageView
+            android:id="@+id/endPointIv"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:src="@drawable/ic_end_point"
+            app:layout_constraintBottom_toBottomOf="@id/endLocationTv"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintTop_toTopOf="@id/endLocationTv" />
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_dot"
+            app:layout_constraintBottom_toTopOf="@id/dot2"
+            app:layout_constraintEnd_toEndOf="@id/startPointIv"
+            app:layout_constraintStart_toStartOf="@id/startPointIv"
+            app:layout_constraintTop_toBottomOf="@id/startPointIv" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_dot"
+            app:layout_constraintBottom_toTopOf="@id/dot3"
+            app:layout_constraintEnd_toEndOf="@id/dot1"
+            app:layout_constraintStart_toStartOf="@id/dot1"
+            app:layout_constraintTop_toBottomOf="@id/dot1" />
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_dot"
+            app:layout_constraintBottom_toTopOf="@id/endPointIv"
+            app:layout_constraintEnd_toEndOf="@id/dot2"
+            app:layout_constraintStart_toStartOf="@id/dot2"
+            app:layout_constraintTop_toBottomOf="@id/dot2" />
+
+        <ImageView
+            android:id="@+id/markerImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_marker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/markerShadow"
+            android:layout_width="@dimen/_16dp"
+            android:layout_height="4dp"
+            android:background="@drawable/marker_shadow"
+            app:layout_constraintEnd_toEndOf="@id/markerImage"
+            app:layout_constraintStart_toStartOf="@id/markerImage"
+            app:layout_constraintTop_toBottomOf="@id/markerImage" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/noInternetView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="@dimen/_16dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:paddingHorizontal="@dimen/_16dp"
+                android:paddingVertical="@dimen/_12dp"
+                android:text="@string/no_internet_connection"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/currentLocationIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_48dp"
+            android:background="@drawable/icon_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_my_location"
+            app:contentPadding="@dimen/_12dp"
+            app:layout_constraintBottom_toTopOf="@id/tariffRv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/zoomOutIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_25dp"
+            android:background="@drawable/icon_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/is_zoom_out"
+            app:contentPaddingBottom="@dimen/_16dp"
+            app:contentPaddingEnd="@dimen/_10dp"
+            app:contentPaddingStart="@dimen/_10dp"
+            app:contentPaddingTop="@dimen/_16dp"
+            app:layout_constraintBottom_toTopOf="@id/currentLocationIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/zoomInIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:background="@drawable/icon_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_zoom_in"
+            app:contentPadding="@dimen/_10dp"
+            app:layout_constraintBottom_toTopOf="@id/zoomOutIv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tariffRv"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/item_tariff" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

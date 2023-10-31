@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TaxiApp</string>
+
+    <string name="mapbox_access_token">pk.eyJ1Ijoic2hlcmEwMSIsImEiOiJja25tc2xyd2swc2RzMnVwcnNhOHNwcXNtIn0.IPWnm96jas371j_QEXIXUA</string>
+
+    <string name="tracking_location">Отслеживание местоположения</string>
+    <string name="stop_tracing">Стоп</string>
+</resources>

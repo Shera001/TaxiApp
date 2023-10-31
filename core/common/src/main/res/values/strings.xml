@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_permanently_declined">Похоже, вы навсегда отклонили разрешение на публикацию уведомлений.
+        Вы можете перейти к настройкам приложения, чтобы предоставить его.
+    </string>
+
+    <string name="location_permanently_declined">Похоже, вы навсегда отклонили разрешение на определение местоположения.
+        Вы можете перейти к настройкам приложения, чтобы предоставить его.
+    </string>
+
+    <string name="notification_declined">Этому приложению требуется разрешение на публикацию уведомлений</string>
+
+    <string name="location_declined">Этому приложению требуется разрешение на определение местоположения</string>
+</resources>

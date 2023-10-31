@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V23.Theme.TaxiApp" parent="Base.V21.Theme.TaxiApp">
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Base.Theme.TaxiApp" parent="Base.V23.Theme.TaxiApp" />
+
+</resources>
